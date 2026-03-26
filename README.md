@@ -17,10 +17,10 @@ To compile, run
   git clone https://github.com/ad4rsh2701/null-widget
   cd null-widget
 
-  cmake -G "Ninja" -S . -B build
-  cmake --build build --config Release
+  cmake -G "Ninja" -S . -B build -DCMAKE_BUILD_TYPE=Release
+  cmake --build build
 ```
-For development, always use `--config Debug` flag while building.
+For development, always use `-DCMAKE_BUILD_TYPE=Debug` flag while building.
 
 > `null-widget` successfully compiles using the `llvm clang` compiler, I cannot garuntee if it will compile using other compilers like GCC or MSVC ...yet.
 
@@ -68,4 +68,4 @@ A nifty little floating window on your screen with Day and Time. What more could
  
  
  3. Is this AI generated or assisted?
-  - No, it's not AI generated, however AI was used to get answers to questions like *"why does WM_CREATE expand to integer 2 and what does it do?"* or *"what is  `lpfnWndProc`??!"*. AI was also used to create a basic template/idea code at start, which is present [here](/.notes/archive/old.cpp) if you want to check it out, I obviously had no idea of this Macro abomination called WindowsAPI
+  - No, it's not AI generated, however AI was used to get answers to questions like *"why does WM_CREATE expand to integer 2 and what does it do?"* or *"what is  `lpfnWndProc`??!"*. AI was also used to create a basic template/idea code at start, which is present [here](./.notes/archive/old.cpp) if you want to check it out, I obviously had no idea of this Macro abomination called WindowsAPI
