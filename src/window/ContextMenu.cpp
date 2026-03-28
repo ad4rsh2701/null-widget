@@ -14,7 +14,7 @@ LRESULT CALLBACK ContextMenuHandler(HWND menu, UINT event, WPARAM wparam, LPARAM
 
         case WM_CREATE:
             state = new MenuState();
-            state -> MenuFont = WidgetFonts::KodeMono(16, FW_NORMAL);
+            state -> MenuFont = WidgetFonts::KodeMono(FONT_SIZE, FW_NORMAL);
             SetWindowLongPtr(menu, GWLP_USERDATA, (LONG_PTR)state);
             break;
 
@@ -39,7 +39,7 @@ LRESULT CALLBACK ContextMenuHandler(HWND menu, UINT event, WPARAM wparam, LPARAM
             HFONT defaultFont = (HFONT)SelectObject(menuCanvas, state->MenuFont);
             SetBkMode(menuCanvas, TRANSPARENT);
 
-            TextOutW(menuCanvas, 10, 5, exitStr, (int)wcslen(exitStr));
+            TextOutW(menuCanvas, X_TEXT_POS, Y_TEXT_POS, exitStr, (int)wcslen(exitStr));
             // I almost want to hardcode the string size as 13, but judging
             // from the fact that I can't count (it's actually 12) I will let
             // wcslen do that job, it will be computed at compile time anyways.

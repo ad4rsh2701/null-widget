@@ -2,6 +2,19 @@
 #pragma once
 #include <windows.h>
 
+
+// Menu Text location
+#define X_TEXT_POS 10
+#define Y_TEXT_POS 7
+
+// Text Size
+#define FONT_SIZE 18
+
+// Menu Dimension
+#define MENU_LENGTH 120
+#define MENU_WIDTH 30
+
+// Menu Class Name
 const wchar_t* const MENU_CLASS_NAME = L"ContextMenuClass";
 
 // Maybe I will need this?

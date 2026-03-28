@@ -168,7 +168,7 @@ LRESULT CALLBACK WidgetHandler(HWND window, UINT event, WPARAM wparam, LPARAM lp
                 MENU_CLASS_NAME, NULL,
                 WS_POPUP | WS_VISIBLE,
                 pt.x, pt.y,
-                120, 30,
+                MENU_LENGTH, MENU_WIDTH,
                 window,     // New thing, it's specifying who is the parent of this menu
                 NULL,       // I still do not know this
                 (HINSTANCE)GetWindowLongPtr(window, GWLP_HINSTANCE),
