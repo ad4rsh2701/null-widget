@@ -1,9 +1,11 @@
 #include "ClockWidget.hpp"
+#include "ContextMenu.hpp"
 #include "Fonts.hpp"
 #include <basetsd.h>
 #include <datetimeapi.h>
 #include <minwinbase.h>
 #include <sysinfoapi.h>
+#include <windef.h>
 #include <windows.h>
 #include <wingdi.h>
 #include <winnls.h>
@@ -155,7 +157,30 @@ LRESULT CALLBACK WidgetHandler(HWND window, UINT event, WPARAM wparam, LPARAM lp
             break;
         }
 
-         case WM_DESTROY: // Triggered when the executable is killed
+
+
+        case WM_RBUTTONUP:{
+            POINT pt;
+            GetCursorPos(&pt);
+
+            CreateWindowExW(
+                WS_EX_TOOLWINDOW | WS_EX_TOPMOST, // Keep it at TOP
+                MENU_CLASS_NAME, NULL,
+                WS_POPUP | WS_VISIBLE,
+                pt.x, pt.y,
+                120, 30,
+                window,     // New thing, it's specifying who is the parent of this menu
+                NULL,       // I still do not know this
+                (HINSTANCE)GetWindowLongPtr(window, GWLP_HINSTANCE),
+                // We are not in WinMain, so we have no way to directly access the "HINSTANCE instance",
+                // The handle to the executable (first param of WinMain). So, we are kindly asking
+                // "window" to show its HINSTANCE value via GetWindowLongPointer.
+                NULL        // Nope
+            );
+            break;
+        }
+
+        case WM_DESTROY: // Triggered when the executable is killed
             // Basically cleanup
 
             if (state) {
