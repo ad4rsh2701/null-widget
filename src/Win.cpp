@@ -10,10 +10,6 @@
 // of our widget executable
 int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int){
 
-    // A name for our "window template". Do not ask why we need this,
-    // it's probably what Windows uses to identify our widegt window.
-    const wchar_t CLASS_NAME[] = L"NullWidget";        // Unicode btw
-
     // Apparently we are creating a template for our window
     // WNDCLASS creates a template for a window (just like how
     // a class is a template for an object, closest thing to
@@ -32,12 +28,12 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int){
     RegisterClassW(&widgetTemplate);
 
     CreateWindowExW(
-        WS_EX_TOOLWINDOW,           // Hide executable from taskbar
-        CLASS_NAME, L"NullWidget",  // Use "this" template
-        WS_POPUP | WS_VISIBLE,      // Borderless window to be shown after creation (same bit packing logic.. ig?)
-        X_SPAWN, Y_SPAWN,           // Initial X,Y coords
-        WIDGET_LENGTH,WIDGET_WIDTH, // Width and Height of the window in px
-        NULL, NULL, instance, NULL  // NO.
+        WS_EX_TOOLWINDOW,                   // Hide executable from taskbar
+        WIDGET_CLASS_NAME, L"NullWidget",   // Use "this" template
+        WS_POPUP | WS_VISIBLE,              // Borderless window to be shown after creation (same bit packing logic.. ig?)
+        X_SPAWN, Y_SPAWN,                   // Initial X,Y coords
+        WIDGET_LENGTH,WIDGET_WIDTH,         // Width and Height of the window in px
+        NULL, NULL, instance, NULL          // NO.
     );
     // WS_EX_TOOLWINDOW  — hides it from the taskbar
     // WS_POPUP          — borderless window (no title bar, no frame)

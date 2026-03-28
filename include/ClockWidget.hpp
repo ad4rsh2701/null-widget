@@ -21,6 +21,12 @@
 #define X_SPAWN 100
 #define Y_SPAWN 100
 
+
+// A name for our "window template". Do not ask why we need this,
+// it's probably what Windows uses to identify our widegt window.
+const wchar_t* const WIDGET_CLASS_NAME = L"NullWidget";        // Unicode btw
+
+
 /*
  * The state of the widget is stored here, it only stores the font information for now.
  * Each widget gets its own state object with its own Font Data.
