@@ -13,6 +13,7 @@ set(SOURCES
     src/Win.cpp
     src/ClockWidget.cpp
     src/utils/fonts.cpp
+    src/window/ContextMenu.cpp
 )
 
 # Using 'WIN32' here is the CMake way of saying "/subsystem:windows"
