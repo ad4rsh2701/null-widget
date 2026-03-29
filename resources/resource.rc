@@ -1,0 +1,8 @@
+// Uhh yea, a windows resource script
+// We will be loading those gnarly fonts
+// to the binary itself.
+
+
+DOTO FONT "fonts/Doto.ttf"
+KODEMONO FONT "fonts/KodeMono.ttf"
+URBANIST FONT "fonts/Urbanist.ttf"
