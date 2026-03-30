@@ -1,5 +1,6 @@
 #include "ClockWidget.hpp"
 #include "ContextMenu.hpp"
+#include "Fonts.hpp"
 #include <minwindef.h>
 #include <windef.h>
 #include <wingdi.h>
@@ -9,6 +10,11 @@
 // @param instance: Handle to the executable, basically an identifer
 // of our widget executable
 int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int){
+
+    // Load our custom fonts to GDI memory
+    // Windows nukes the memory occupied by this
+    // on exit, so no need to unload or remove manually.
+    WidgetFonts::LoadCustomFonts();
 
     // Apparently we are creating a template for our window
     // WNDCLASS creates a template for a window (just like how
