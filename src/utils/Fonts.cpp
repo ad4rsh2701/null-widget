@@ -1,12 +1,9 @@
-#include "Fonts.hpp"
-#include <libloaderapi.h>
-#include <wingdi.h>
-
+#include <Fonts.hpp>
 
 namespace {
 
-    // I could have defined macros which exapnded
-    // to font-face names, and used that for both,
+    // I could have defined macros which expanded
+    // to font-face names and used that for both,
     // but fonts like "Kode Mono" break in the .rc
     // file, it has no support for space character
 
@@ -25,26 +22,26 @@ namespace {
     // Private Helper Function to LOAD the fonts
     void Load(const Font& font) {
 
-        HRSRC resource = FindResourceW(NULL, font.resourceID, L"FONT");     // Find the Font
-        HGLOBAL memory = LoadResource(NULL, resource);                      // Load the Font
-        void* pointerToFont = LockResource(memory);                         // Lock the Font
-        DWORD size = SizeofResource(NULL, resource);                        // Size of the Font
-        DWORD count;                                                        // I hate this var declaration cuz Win32 DEMANDS IT
-        // The first param NULL, it's actually asking for the HINSTANCE of
-        // the executable or the module to load the resource from, we should
+        HRSRC resource = FindResourceW(nullptr, font.resourceID, L"FONT");     // Find the Font
+        HGLOBAL memory = LoadResource(nullptr, resource);                                   // Load the Font
+        void* pointerToFont = LockResource(memory);                                                 // Lock the Font
+        DWORD size = SizeofResource(nullptr, resource);                                     // Size of the Font
+        DWORD count;                                                                                // I hate this var declaration cuz Win32 DEMANDS IT
+        // The first nullptr params, it's actually asking for the HINSTANCE
+        // of the executable or the module to load the resource from, we should
         // pass our main HINSTANCE (window) here, but passing that to a helper
-        // function isn't suiting my taste, and btw NULL means
-        // search in the current executable, which is fine..
+        // function isn't suiting my taste, and btw passing HINSTANCE as nullptr
+        // means, search in the current executable, which is fine
         // ...unless I get more exes
 
         // Load the Font to GDI memory (Process-Private Font Table),
         // so now GDI (or more precisely, `CreateFontW()`) can find
         // these fonts even if it's not in C:/Windows/Fonts/
-        AddFontMemResourceEx(pointerToFont, size, NULL, &count);
+        AddFontMemResourceEx(pointerToFont, size, nullptr, &count);
         // AND YES, I did think about doing it in inline
             // AddFontMemResourceEx(
-            //      LockResource(LoadResource(NULL, resource)),
-            //      SizeofResource(NULL, resource),
+            //      LockResource(LoadResource(nullptr, resource)),
+            //      SizeofResource(nullptr, resource),
             //      &count
             //  );
         // But that `count`...
@@ -72,7 +69,7 @@ namespace {
 // We load the custom fonts to the GDI memory.
 // We will call this function at the start of WinMain()
 // This way, all the custom fonts are loaded once, and
-// Windows will cleanup this resource automatically on
+// Windows will clean up this resource automatically on
 // exit, we won't need to use `RemoveFontMemResourceEx`
 void WidgetFonts::LoadCustomFonts(){
     Load(URBANIST);

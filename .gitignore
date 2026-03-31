@@ -41,7 +41,7 @@
 *.dwo
 
 # IDE/Editor folder
-*.clion
+*.idea
 *.zed
 
 # build folders

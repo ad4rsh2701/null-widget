@@ -2,7 +2,7 @@
 // We will be loading those gnarly fonts
 // to the binary itself.
 
-// Assosicating IDs with Font Files
+// Associating IDs with Font Files
 // Basically Resource IDs (R3XX ~ Resource 3XX)
 R301 FONT "fonts/Doto.ttf"
 R302 FONT "fonts/KodeMono.ttf"

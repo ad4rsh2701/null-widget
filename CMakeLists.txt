@@ -4,7 +4,7 @@ project(null-widget LANGUAGES CXX RC)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
-set(CMAKE_CXX_STANDARD 17) #ehh
+set(CMAKE_CXX_STANDARD 20) # C++20 was 6 years ago, damn I am old
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
@@ -25,7 +25,7 @@ set(REQUIRED_FONTS
 )
 foreach(FONT ${REQUIRED_FONTS})
     if(NOT EXISTS ${FONT})
-        message(FATAL_ERROR "COMPILATION ABORTED: Missing font file: ${FONT}")
+        message(FATAL_ERROR "FONTS MISSING: Missing font file: ${FONT}")
     endif()
 endforeach()
 

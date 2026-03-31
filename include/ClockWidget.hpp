@@ -22,9 +22,9 @@
 #define Y_SPAWN 100
 
 
-// A name for our "window template". Do not ask why we need this,
-// it's probably what Windows uses to identify our widegt window.
-const wchar_t* const WIDGET_CLASS_NAME = L"NullWidget";        // Unicode btw
+// A name for our "window template". Do not ask why we need this;
+// it's probably what Windows uses to identify our widget window.
+inline const auto WIDGET_CLASS_NAME = L"NullWidget";    // Unicode btw
 
 
 /*
@@ -37,7 +37,7 @@ struct WidgetState {
 };
 
 // I do realize that WidgetState is probably overkill for just "one" widget,
-// but on paper this makes mroe sense to me than `static DayFont`
+// but on paper this makes more sense to me than `static DayFont`
 // and leave everything to the global scope.
 
 /*
@@ -50,7 +50,7 @@ struct WidgetState {
  * essentially storing a pointer to WidgetState object inside HWND's user data.
  *
  * Usually it's termed as WindowProc as in "Windows Procedure"; procedure == function.
- * But that's stupid in my honest opinion, no offense to anceint coding practices.
+ * But that's stupid, in my honest opinion, no offense to ancient coding practices.
  *
  */
 LRESULT CALLBACK WidgetHandler(HWND window, UINT event, WPARAM wparam, LPARAM lparam);

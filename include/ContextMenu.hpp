@@ -15,7 +15,7 @@
 #define MENU_WIDTH 30
 
 // Menu Class Name
-const wchar_t* const MENU_CLASS_NAME = L"ContextMenuClass";
+inline const auto MENU_CLASS_NAME = L"ContextMenuClass";
 
 // Maybe I will need this?
 struct MenuState {
