@@ -1,8 +1,9 @@
 # null-widget
+![Status](https://img.shields.io/badge/status-alpha-orange)
+![Version](https://img.shields.io/github/v/release/ad4rsh2701/null-widget?include_prereleases&label=latest%20pre-release)
 
 A Windows API and C++ based Windows widget application.
 
-> Currently, it renders a draggable code-customizable clock widget.
 ---
 
 ## Installation
@@ -39,21 +40,11 @@ A nifty little floating window on your screen with Day and Time. What more could
 ---
 ## Known Issues
 
-### 1. Font mismatch due to local fonts
-  - Since I used locally downloaded fonts, these fonts are local to only me and not on your device.
-  - This will cause error while compilation itself, as the fonts will be not found on your system.
-  - Or if you ran the binary, well, that's UB (maybe Windows will use the default font?)
-  - A fix for this is being worked on and will be available soon
-  - For now, you can download the three fonts from [here](https://fonts.google.com/specimen/Urbanist), [here](https://fonts.google.com/specimen/Doto) and [here](https://fonts.google.com/specimen/Kode+Mono). They are cool fonts to have anyway.
-
-### 2. Lack of Cross-Compiler Support
+### 1. Lack of Cross-Compiler Support
   - Yea... only Clang++ is truly supported, if it works on others then, do let me know.
   - Will provide cross-compiler compilation if I feel like it.
-  
-### 3. No `Close Widget` option
- - Yes, there is no option to directly close the widget.
- - For now, you can close the widget by killing the executable from the task manager; it will be named "null-widget"
- - This issue is being worked on as you read this
+
+Please refere the [Issues](https://github.com/ad4rsh2701/null-widget/issues) section for latest issues
  
  ---
  
