@@ -1,0 +1,13 @@
+// Uhh yea, a windows resource script
+// We will be loading those gnarly fonts
+// to the binary itself.
+
+// Associating IDs with Font Files
+// Basically Resource IDs (R3XX ~ Resource 3XX)
+R301 FONT "fonts/Doto.ttf"
+R302 FONT "fonts/KodeMono.ttf"
+R303 FONT "fonts/Urbanist.ttf"
+
+// I like the number 3, and leaving the range
+// 0-200 for other things (like a response
+// system? or something of higher priority).
