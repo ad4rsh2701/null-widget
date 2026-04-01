@@ -20,9 +20,12 @@ jobs:
     - name: Install Ninja
       run: choco install ninja
 
+    - name: Install LLVM Clang
+      run: choco install clang
+
     - name: Configure CMake
-      # We add -G "Ninja"
-      run: cmake -G "Ninja" -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      # We add -G "Ninja" AND use CLANG FFS
+      run: cmake -DCMAKE_CXX_COMPILER=clang++ -G "Ninja" -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
