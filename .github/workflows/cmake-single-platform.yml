@@ -21,7 +21,7 @@ jobs:
       run: choco install ninja
 
     - name: Install LLVM Clang
-      run: choco install clang
+      run: choco install llvm
 
     - name: Configure CMake
       # We add -G "Ninja" AND use CLANG FFS
