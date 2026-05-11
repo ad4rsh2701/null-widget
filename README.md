@@ -25,7 +25,7 @@ For development, always use `-DCMAKE_BUILD_TYPE=Debug` flag while building.
 
 > `null-widget` successfully compiles using the `llvm clang` compiler, I cannot garuntee if it will compile using other compilers like GCC or MSVC ...yet.
 
-And to close the widget, you will need to manually kill the exe from the taskbar :P
+And to close the widget, right click to find the close option.
 
 ---
 
